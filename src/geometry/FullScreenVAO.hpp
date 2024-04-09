@@ -1,28 +1,27 @@
 #ifndef OPENVDB_RENDERER_SRC_GEOMETRY_FULLSCREENVAO_HPP_
 #define OPENVDB_RENDERER_SRC_GEOMETRY_FULLSCREENVAO_HPP_
+#define GLEW_NO_GLU
+#include <GL/glew.h>
 
-#include "GL/glew.h"
-
-class FullScreenVAO
-{
+class FullScreenVAO {
 public:
-  FullScreenVAO();
+    FullScreenVAO();
 
-  FullScreenVAO(const FullScreenVAO &other) = delete;
-  FullScreenVAO(FullScreenVAO &&other) noexcept = delete;
-  FullScreenVAO& operator=(const FullScreenVAO &other) = delete;
-  FullScreenVAO& operator=(FullScreenVAO &&other) = delete;
+    FullScreenVAO(const FullScreenVAO &other)            = delete;
+    FullScreenVAO(FullScreenVAO &&other) noexcept        = delete;
+    FullScreenVAO &operator=(const FullScreenVAO &other) = delete;
+    FullScreenVAO &operator=(FullScreenVAO &&other)      = delete;
 
-  virtual ~FullScreenVAO() noexcept {};
+    virtual ~FullScreenVAO() noexcept {};
 
 public:
-  void bind() const;
-  void unbind() const;
+    void bind() const;
+    void unbind() const;
 
-  void draw() const;
+    void draw() const;
 
 private:
-  GLuint quadIBO, quadVBO, quadVAO;
+    GLuint quadIBO, quadVBO, quadVAO;
 };
 
 #endif /* OPENVDB_RENDERER_SRC_GEOMETRY_FULLSCREENVAO_HPP_ */

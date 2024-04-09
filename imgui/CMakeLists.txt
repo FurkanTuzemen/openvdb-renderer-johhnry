@@ -23,3 +23,10 @@ add_library(
 
   imfilebrowser.h
 )
+
+target_link_libraries(
+  imgui
+  ${OPENGL_LIBRARIES}
+  glfw glm::glm stb::stb
+  GLEW::GLEW
+)
